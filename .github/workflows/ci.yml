@@ -1,0 +1,12 @@
+name: Move issue to In Progress
+
+on: pull_request
+jobs:
+  move-issues-to-in-progress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: rharter/github-move-linked-project-cards@v0.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          column: In Progress
+          draft-column: To Do
